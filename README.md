@@ -26,3 +26,25 @@ Boot maintainance manager -->> Change boot order -->> Select the order and press
 Now save the settings and return to booting. The jetson will boot from the SSD card everytime you boot up. Now that you are logged in, connect to the wifi and continue with the process on the laptop of the install. This will take some time.
 
 When the install is ready you can exit the SDK manager and restart the Jetson Xavier. All should be up and running now.
+
+
+# Changing to better cooling solution
+first install nano
+```
+sudo apt install nano
+```
+and now change the parameter in the fan configuration,
+```
+sudo nano /etc/nvpower/nvfancontrol/nvfancontrol_p2888.conf
+```
+And change the setting
+```
+FAN_DEFAULT_PROFILE quiet
+```
+To,
+```
+FAN_DEFAULT_PROFILE cool
+```
+
+You can also change the parameters to your liking.
+
