@@ -48,3 +48,7 @@ FAN_DEFAULT_PROFILE cool
 
 You can also change the parameters to your liking.
 
+NOTE: If the fan only operates at max speed after startup use,
+```
+sudo systemctl restart nvfancontrol.service
+```
