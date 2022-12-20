@@ -52,3 +52,13 @@ NOTE: If the fan only operates at max speed after startup use,
 ```
 sudo systemctl restart nvfancontrol.service
 ```
+
+# UART
+When starting up the jetson is going to communicate through UART when it is connected.
+this interferes with the px4 module, so we have to disable the debug console trhough UART
+```
+systemctl stop nvgetty
+systemctl disable nvgetty
+udevadm trigger
+```
+now restart and configuration should be fine.
