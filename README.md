@@ -62,3 +62,22 @@ systemctl disable nvgetty
 udevadm trigger
 ```
 now restart and configuration should be fine.
+
+# Terminal through micro-USB connection
+
+we use GTKterm to create a serial console connection to the jetson from a laptop
+```
+sudo apt install gtkterm
+```
+Start the jetson and connect the USB to the laptop and micro-USB to jetson. Now start gtkterm:
+```
+sudo gtkterm
+```
+In the console go to configurations -> port and set the correct settings:
+- port: for example /dev/ttyACM0 but this can differ, you can select one from the drop down menu.
+- Baudrate: 115200
+- Parity: none
+- Bits: 8
+- Stopbits: 0
+- Flow Control: none
+press ok and then it will ask for login and password of the jetson system. After correctly putting in the cridentials you will see that you are connected to a terminal on the jetson.
